@@ -1,0 +1,67 @@
+.theme-light {
+    --color-primary: rgb(32, 32, 32);
+    --color-secondary: rgb(97, 97, 97);
+    --color-highlight: rgb(83, 21, 59);
+    --color-background: rgb(255, 255, 255);
+}
+
+.theme-dark {
+    --color-primary: rgb(255, 255, 255);
+    --color-secondary: rgb(192, 192, 192);
+    --color-highlight: rgb(235, 146, 178);
+    --color-background: rgb(17, 17, 17);
+}
+.nav {
+    padding: 30px;
+}
+
+.topBox {
+    display: flex;
+    width: 600px;
+    padding-bottom: 50px;
+}
+/* I don't know how the reflection for albumImg 
+ actually works, but it does :) */
+#albumImg {
+    justify-self: flex-start;
+    position: relative;
+    background-image: url(images/jacket.png);
+    height: 240px;
+    width: 240px;
+    background-size: cover;
+}
+
+#albumImg::before {
+    content: "";
+    width: inherit;
+    height: 15%;
+    position: absolute;
+    bottom: -15%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.3),
+        var(--color-background)
+    );
+    z-index: 1;
+}
+
+#albumImg::after {
+    content: "";
+    background-size: cover;
+    background-image: inherit;
+    width: inherit;
+    height: 14%;
+    position: absolute;
+    bottom: -14%;
+    background-position: bottom;
+    transform: scaleY(-1);
+}
+body {
+    background: var(--color-background);
+}
+
+.pageStructure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
