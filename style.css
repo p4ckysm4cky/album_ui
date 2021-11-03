@@ -10,7 +10,7 @@
 }
 
 .theme-dark {
-    --color-primary: rgba(255, 255, 255, 0.945);
+    --color-primary: rgba(255, 255, 255, 0.822);
     --color-secondary: rgb(192, 192, 192);
     --color-highlight: rgb(235, 146, 178);
     --color-background: rgb(17, 17, 17);
@@ -25,6 +25,7 @@
     right: 100px;
     top: 50px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .topBox {
@@ -38,8 +39,8 @@
     justify-self: flex-start;
     position: relative;
     background-image: url(images/jacket.png);
-    height: 240px;
-    width: 240px;
+    height: 220px;
+    width: 220px;
     background-size: cover;
 }
 
@@ -89,10 +90,42 @@ body {
     flex-direction: column;
 }
 
+#albumInfo {
+    color: var(--color-secondary);
+    font-weight: 400;
+    margin: 0px;
+}
+
 .topTextContainer h1 {
     color: var(--color-highlight);
+    font-size: 50px;
 }
 
 #artist {
-    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.bottomBox {
+    font-weight: 500;
+}
+
+.bottomBox hr {
+    border: 1px solid var(--color-secondary);
+}
+
+#songHeader {
+    display: flex;
+    color: var(--color-secondary);
+}
+
+.songNum {
+    width: 30px;
+}
+
+.songTitle {
+    width: 550px;
+}
+
+.songTime {
+    width: 40px;
 }
