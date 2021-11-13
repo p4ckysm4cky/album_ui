@@ -4,16 +4,18 @@
 
 .theme-light {
     --color-primary: rgb(32, 32, 32);
-    --color-secondary: rgb(97, 97, 97);
+    --color-secondary: rgb(87, 87, 87);
     --color-highlight: rgb(144, 37, 103);
     --color-background: rgb(255, 255, 255);
+    --color-backgroundSecondary: rgb(243, 243, 243);
 }
 
 .theme-dark {
     --color-primary: rgba(255, 255, 255, 0.822);
     --color-secondary: rgb(192, 192, 192);
     --color-highlight: rgb(235, 146, 178);
-    --color-background: rgb(17, 17, 17);
+    --color-background: rgb(0, 0, 0);
+    --color-backgroundSecondary: rgb(41, 41, 41);
 }
 .nav {
     padding: 30px;
@@ -119,13 +121,46 @@ body {
 }
 
 .songNum {
+    padding-left: 10px;
     width: 30px;
 }
 
-.songTitle {
+.songTitleWidth {
     width: 550px;
 }
 
 .songTime {
     width: 40px;
+}
+
+.songContainer {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.songContainer:hover {
+    background-color: var(--color-backgroundSecondary);
+}
+
+.songContainer:hover > .songNum span{
+    display: none;
+}
+
+.songContainer:hover > .songNum:before{
+    /* background: red; */
+    content: "⏵"
+}
+.songArtist {
+    color: var(--color-secondary);
+    font-size: 13px;
+}
+
+.songTitle {
+    font-size: 18px;
+    color: var(--color-highlight);
+}
+
+footer {
+    height: 30px;
 }
