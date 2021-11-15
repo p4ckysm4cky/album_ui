@@ -24,7 +24,7 @@
 .nav i {
     color: var(--color-primary);
     position: fixed;
-    right: 100px;
+    right: 20px;
     top: 50px;
     cursor: pointer;
     z-index: 1;
@@ -32,9 +32,17 @@
 
 .topBox {
     display: flex;
-    width: 600px;
+    max-width: 600px;
     padding-bottom: 50px;
 }
+
+@media (max-width: 768px) {
+    .topBox {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /* I don't know how the reflection for albumImg 
  actually works, but it does :) */
 #albumImg {
@@ -44,6 +52,13 @@
     height: 220px;
     width: 220px;
     background-size: cover;
+}
+
+@media (max-width: 768px) {
+    #albumImg {
+        height: 190px;
+        width: 190px;
+    }
 }
 
 #albumImg::before {
@@ -103,6 +118,12 @@ body {
     font-size: 50px;
 }
 
+@media (max-width: 768px) {
+    .topTextContainer h1 {
+        font-size: 35px;
+    }
+}
+
 #artist {
     margin-bottom: auto;
 }
@@ -129,8 +150,31 @@ body {
     width: 550px;
 }
 
+.songsDisplay {
+    display: flex;
+    flex-direction: column;
+}
+
 .songTime {
     width: 40px;
+}
+
+@media (max-width: 768px) {
+    .songTitleWidth {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .songTitleWidth {
+        width: 180px;
+    }
+    .songNum {
+        font-size: 15px;
+    }
+    .songTime {
+        font-size: 13px;
+    }
 }
 
 .songContainer {
@@ -139,18 +183,21 @@ body {
     padding-bottom: 10px;
 }
 
-.songContainer:hover {
-    background-color: var(--color-backgroundSecondary);
+@media (min-width: 768px) {
+    .songContainer:hover {
+        background-color: var(--color-backgroundSecondary);
+    }
+
+    .songContainer:hover > .songNum span {
+        display: none;
+    }
+
+    .songContainer:hover > .songNum:before {
+        /* background: red; */
+        content: "⏵";
+    }
 }
 
-.songContainer:hover > .songNum span{
-    display: none;
-}
-
-.songContainer:hover > .songNum:before{
-    /* background: red; */
-    content: "⏵"
-}
 .songArtist {
     color: var(--color-secondary);
     font-size: 13px;
@@ -159,6 +206,16 @@ body {
 .songTitle {
     font-size: 18px;
     color: var(--color-highlight);
+    margin-right: 15px;
+}
+
+@media (max-width: 480px) {
+    .songTitle {
+        font-size: 15px;
+    }
+    .songArtist {
+        font-size: 12px;
+    }
 }
 
 footer {
